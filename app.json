@@ -2,6 +2,7 @@
   "pages":[
     "pages/home/home",
     "pages/api/api",
+    "pages/tip/tip",
     "pages/index/index",
     "pages/pay/pay",
     "pages/logs/logs",
@@ -45,6 +46,12 @@
         "text": "API",
         "iconPath": "assets/image/btn-api.png",
         "selectedIconPath": "assets/image/btn-api-active.png"
+      },
+      {
+        "pagePath": "pages/tip/tip",
+        "text": "TIP",
+        "iconPath": "assets/image/btn-tip.png",
+        "selectedIconPath": "assets/image/btn-tip-active.png"
       }
     ]
   }

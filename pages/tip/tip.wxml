@@ -1,0 +1,29 @@
+<!--pages/tip/tip.wxml-->
+<view class="wrapper">
+  <view class="tiplist"  
+        wx:for="{{tiplist}}" 
+        wx:for-item="tiplist" 
+        wx:key="{{tiplist.itemId}}" 
+        animation="{{animationData}}">
+    <view 
+        class="tiplist-name" 
+        hover-class="turn-gray" 
+        hover-start-time="0" 
+        hover-stay-time="0"  
+        bindtap='showChildList'
+    >
+      <text>{{tiplist.title}}</text>
+      <view class="icon-box" >
+        <image class="icon-next"  src="../../assets/image/arrow-down.png"></image>
+      </view>
+    </view>
+    <view class="tiplist-content" >
+      <view class="tiplist-group"
+            wx:for="{{tiplist.child}}" 
+            wx:for-item="child" 
+            wx:key="{{child.id}}" >
+        11
+      </view>
+    </view>
+  </view>
+</view>
