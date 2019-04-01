@@ -1,0 +1,52 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/api/api",
+    "pages/index/index",
+    "pages/pay/pay",
+    "pages/logs/logs",
+    "pages/result/result",
+    "pages/webview/webview",
+    "pages/item/item",
+    "pages/cart/cart",
+    "pages/section-a/section-a",
+    "pages/section-b/section-b",
+    "pages/section-c/section-c",
+    "pages/section-h/section-h",
+    "pages/section-g/section-g",
+    "pages/section-n/section-n",
+    "pages/section-o/section-o",
+    "pages/section-p/section-p",
+    "pages/section-r/section-r",
+    "pages/section-r-1/section-r-1",
+    "pages/section-r-2/section-r-2",
+    "pages/section-s/section-s"
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffcbf0",  
+    "navigationBarTitleText": "小程序文档",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffcbf0",
+    "color":"#999",
+    "selectedColor":"#FC481A",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "组件",
+        "iconPath":"assets/image/btn-home.png",
+        "selectedIconPath":"assets/image/btn-home-active.png"
+      },
+      {
+        "pagePath": "pages/api/api",
+        "text": "API",
+        "iconPath": "assets/image/btn-api.png",
+        "selectedIconPath": "assets/image/btn-api-active.png"
+      }
+    ]
+  }
+  
+}

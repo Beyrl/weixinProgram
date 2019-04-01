@@ -1,0 +1,5 @@
+<view class="section-wrapper">
+  <button class="button" type="default" bindtap='wxredirect3'>
+    去往下一个子页面
+  </button>
+</view>

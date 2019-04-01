@@ -1,0 +1,428 @@
+<!--pages/home/home.wxml-->
+<scroll-view enable-back-to-top="{{false}}" scroll-with-animation ="{{true}}">
+<!-- view -->
+<!-- 疑问：
+    1.明确一下view到底是什么元素？块级？特性是什么？
+-->
+  <view class="title">组件一：view</view>
+  <view class="content">
+    <view class="first-box" hover-class="turn-pink" hover-start-time="0" hover-stay-time="0">
+    <view class="son-box" hover-stop-propagation></view>
+    </view>
+    <view class="first-box" hover-class="turn-pink" hover-start-time="0" hover-stay-time="0">
+      <view class="son-box" hover-stop-propagation></view>
+    </view>
+    <view class="first-box" hover-class="turn-pink" hover-start-time="0" hover-stay-time="0">
+      <view class="son-box" hover-stop-propagation></view>
+    </view>
+  </view>
+<!-- scroll-view -->
+<!-- 疑问：
+    1.scroll-into-view：击滚动到设定位置,滚动到指定位置后，滑动，再点击，无法再回到指定位置,目前猜想可能与生命周期或者setData有关
+-->
+<!-- 要点：
+    1.enable-back-to-top = "{{false}}" true 和 false 应该这么写。
+    2.在 scroll-view 中不能使用 textarea、map、canvas、video 组件
+    3.在滚动 scroll-view 时会阻止页面回弹，所以在 scroll-view 中滚动，是无法触发 onPullDownRefresh。
+    4.若要使用下拉刷新，请使用页面的滚动，而不是 scroll-view ，这样也能通过点击顶部状态栏回到页面顶部
+-->
+<!-- 练习：
+    1.目录走锚点
+    2.通讯录右侧下滑，左侧跟着滑动
+-->
+  <view class="title">组件二：scroll-view</view>
+  <view class="scroll-view-box content">
+    <scroll-view class="scroll-view" scroll-y upper-threshold
+      scroll-y
+      upper-threshold="100"
+      scroll-with-animation ="{{true}}"
+      enable-back-to-top = "{{true}}"
+      bindscrolltoupper="upper"
+      bindscrolltolower="lower"
+      bindscroll="scroll"
+      scroll-into-view="{{toview}}"
+      scroll-top="{{scrollTop}}"
+    >
+        <view id="green" class="scroll-view-item bc_green"></view>
+        <view id="red" class="scroll-view-item bc_red"></view>
+        <view id="yellow" class="scroll-view-item bc_yellow"></view>
+        <view id="blue" class="scroll-view-item bc_blue"></view>
+        <view id="green2" class="scroll-view-item bc_green"></view>
+        <view id="red2" class="scroll-view-item bc_red"></view>
+        <view id="yellow2" class="scroll-view-item bc_yellow"></view>
+        <view id="blue2" class="scroll-view-item bc_blue"></view>
+    </scroll-view>
+    <view class="btn-area">
+      <button size="mini" bindtap="tap">click me to scroll into view</button>
+      <button size="mini" bindtap="tapMove">click me to scroll</button>
+    </view>
+  </view>
+  <!-- swiper -->
+  <!-- 疑问：
+      1.
+  -->
+  <!-- 练习：
+    1.AA记账轮播方式
+  -->
+  <view class="title">组件三：swiper</view>
+  <view class="content">
+    <swiper 
+    class="swiper" 
+    indicator-dots = "{{true}}"
+    indicator-color = "rgba(0,128,0, 0.5)"
+    indicator-active-color = "rgba(0,0,255, 0.5)"
+    autoplay = "{{true}}"
+    circular = "{{true}}"
+    previous-margin = "0rpx"
+    next-margin = "0px"
+    display-multiple-items = "1"
+    bindchange = "changeSwiper"
+    bindtransition = "changeTransition"
+    bindanimationfinish = "animationF"
+    >
+      <block wx:for="{{imgUrls}}" wx:key="">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- movable-view -->
+  <!-- 要点 
+       1、movable-area 必须设置width和height属性
+       2、movable-view必须在<movable-area/>组件中，并且必须是直接子节点，否则不能移动
+  -->
+  <!-- 疑问：
+      1.
+  -->
+  <!-- 练习：
+    1.
+  -->
+  <view class="title">组件四：movable-view</view>
+  <view class="content">
+    <movable-area class="movable-area">
+      <movable-view class="movable-view"
+        direction = "all"
+        inertia = "{{true}}"
+        out-of-bounds = "{{true}}"
+        friction = "1"
+      ></movable-view>
+    </movable-area>
+  </view>  
+  <view class="content">
+    <view class="title">movable-view区域小于movable-area</view>
+    <movable-area style="height: 200px; width: 200px; background: red;">
+      <movable-view
+        style="height: 50px; width: 50px; background: blue;"
+        x="{{x}}"
+        y="{{y}}"
+        direction="all"
+      ></movable-view>
+    </movable-area>
+    <view class="btn-area">
+      <button size="mini" bindtap="tapmove">click me to move to (30px, 30px)</button>
+    </view>
+  </view>
+  <view class="content heit">
+    <view class="title">movable-view区域大于movable-area</view>
+    <movable-area style="height: 100px; width: 100px; background: red;">
+      <movable-view
+        style="height: 200px; width: 200px; background:rgba(0,0,255, 0.5)"
+        direction="all"
+      ></movable-view>
+    </movable-area>
+  </view>
+  <view class="content heit">
+    <view class="title">可放缩</view>
+    <movable-area
+      style="height: 200px; width: 200px; background: red;"
+      scale-area
+    >
+      <movable-view
+        style="height: 50px; width: 50px; background: blue;"
+        direction="all"
+        bindchange="onChange"
+        bindscale="onScale"
+        scale
+        scale-min="0.5"
+        scale-max="4"
+        scale-value="2"
+      ></movable-view>
+    </movable-area>
+  </view> 
+  <!-- cover-view -->
+  <!-- 要点 
+       1、
+  -->
+  <!-- 疑问：
+      1.能拖动吗
+  -->
+  <!-- 练习：
+      1.完成实时播放到几分几秒
+  -->
+  <view class="title">组件五：cover-view和cover-image</view>
+  <view class="content">
+    <video
+      id="myVideo"
+      src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+      controls="{{false}}"
+      event-model="bubble"
+    >
+      <cover-view class="controls">
+        <cover-view class="play" bindtap="play">
+          <cover-image class="img" src="../../assets/image/icon_play.png" />
+        </cover-view>
+        <cover-view class="pause" bindtap="pause">
+          <cover-image class="img" src="../../assets/image/icon_pause.png" />
+        </cover-view>
+        <cover-view class="time">00:00</cover-view>
+      </cover-view>
+    </video>
+    <view class="section tc">
+      <video
+        id="myVideo1"
+        src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+        danmu-list="{{danmuList}}"
+        enable-danmu
+        danmu-btn
+        controls
+      ></video>
+      <view class="btn-area">
+        <button bindtap="bindButtonTap">获取视频</button>
+        <input bindblur="bindInputBlur" />
+        <button bindtap="bindSendDanmu">发送弹幕</button>
+      </view>
+    </view>
+  </view>
+  <view class="title">组件五：icon</view>
+  <view class="content heit">
+    <block wx:for="{{iconSize}}" wx:key="">
+      <icon type="success" size="{{item}}" color="red"/>
+    </block>
+    <block wx:for="{{iconType}}" wx:key="">
+      <icon type="{{item}}" size="40" />
+    </block>
+  </view>
+  <view class="title">组件六：text</view>
+  <view class="content heit">
+    <text>{{text}}</text>
+    <button bindtap="add">add line</button>
+  </view>
+  <!-- rich-text -->
+  <!-- 要点 
+       1、nodes 属性推荐使用 Array 类型，由于组件会将 String 类型转换为 Array 类型，因而性能会有所下降
+  -->
+  <!-- 疑问：
+      1.感觉没啥卵用，鸡肋
+  -->
+  <view class="title">组件七：rich-text</view>
+  <view class="content heit">
+    <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+  </view>
+  <!-- progress -->
+  <!-- 要点 
+       1、nodes 属性推荐使用 Array 类型，由于组件会将 String 类型转换为 Array 类型，因而性能会有所下降
+  -->
+  <!-- 疑问：
+      1.相当于vue里面的v-html,直接传一个字符串就行。
+  -->
+  <view class="title">组件七：progress</view>
+  <view class="content heit">
+    <progress percent="20" show-info />
+    <rich-text nodes="{{[{name:'br'}]}}"></rich-text>
+    <progress percent="40" stroke-width="12" activeColor="red"/>
+    <rich-text nodes="{{[{name:'br'}]}}"></rich-text>
+    <progress percent="60" color="pink" />
+    <rich-text nodes="{{[{name:'br'}]}}"></rich-text>
+    <progress percent="80" active />
+  </view>
+  <view class="title">组件八：button</view>
+  <view class="content">
+    <button
+      type="default"
+      size="{{defaultSize}}"
+      loading="{{loading}}"
+      plain="{{plain}}"
+      disabled="{{disabled}}"
+      bindtap="default"
+      hover-class="other-button-hover"
+    >
+      default
+    </button>
+    <button
+      type="primary"
+      size="{{primarySize}}"
+      loading="{{loading}}"
+      plain="{{plain}}"
+      disabled="{{disabled}}"
+      bindtap="primary"
+    >
+      primary
+    </button>
+    <button
+      type="warn"
+      size="mini"
+      loading="{{loading}}"
+      plain="{{plain}}"
+      disabled="{{disabled}}"
+      bindtap="warn"
+    >
+      warn
+    </button>
+    <button bindtap="setDisabled">点击设置以上按钮disabled属性</button>
+    <button bindtap="setPlain">点击设置以上按钮plain属性</button>
+    <button bindtap="setLoading">点击设置以上按钮loading属性</button>
+    <button open-type="contact">进入客服会话</button>
+    <button open-type="share">触发用户转发</button>
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+      获取用户信息
+    </button>
+    <button open-type="openSetting">打开授权设置页</button>
+    <button open-type="feedback">意见反馈</button>
+  </view>
+  <view class="title">组件九：checkbox</view>
+  <view class="content">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}" wx:key="">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}" />
+        {{item.value}}
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="title">组件十：form</view>
+  <view class="content">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section section_gap">
+        <view class="section__title">switch</view>
+        <switch name="switch" />
+      </view>
+      <view class="section section_gap">
+        <view class="section__title">slider</view>
+        <slider name="slider" show-value></slider>
+      </view>
+      <view class="section">
+        <view class="section__title">input</view>
+        <input name="input" placeholder="please input here" />
+      </view>
+      <view class="section section_gap">
+        <view class="section__title">radio</view>
+        <radio-group name="radio-group">
+          <label>
+            <radio value="radio1" />
+            radio1
+          </label>
+          <label>
+            <radio value="radio2" />
+            radio2
+          </label>
+        </radio-group>
+      </view>
+      <view class="section section_gap">
+        <view class="section__title">checkbox</view>
+        <checkbox-group name="checkbox">
+          <label>
+            <checkbox value="checkbox1" />
+            checkbox1
+          </label>
+          <label>
+            <checkbox value="checkbox2" />
+            checkbox2
+          </label>
+        </checkbox-group>
+      </view>
+      <view class="btn-area">
+        <button form-type="submit">Submit</button>
+        <button form-type="reset">Reset</button>
+      </view>
+    </form>
+  </view>
+  <view class="title">组件十一：label</view>
+  <view class="content">
+    <view class="section section_gap">
+      <view class="section__title">表单组件在label内</view>
+      <checkbox-group class="group" bindchange="checkboxChange">
+        <view class="label-1" wx:for="{{checkboxItems}}"  wx:key="">
+          <label>
+            <checkbox
+              hidden
+              value="{{item.name}}"
+              checked="{{item.checked}}"
+            ></checkbox>
+            <view class="label-1__icon">
+              <view
+                class="label-1__icon-checked"
+                style="opacity:{{item.checked ? 1: 0}}"
+              ></view>
+            </view>
+            <text class="label-1__text">{{item.value}}</text>
+          </label>
+        </view>
+      </checkbox-group>
+    </view>
+    <view class="section section_gap">
+    <view class="section__title">label用for标识表单组件</view>
+      <radio-group class="group" bindchange="radioChange">
+        <view class="label-2" wx:for="{{radioItems}}" wx:key="">
+          <radio
+            id="{{item.name}}"
+            hidden
+            value="{{item.name}}"
+            checked="{{item.checked}}"
+          ></radio>
+          <view class="label-2__icon">
+            <view
+              class="label-2__icon-checked"
+              style="opacity:{{item.checked ? 1: 0}}"
+            ></view>
+          </view>
+          <label class="label-2__text" for="{{item.name}}">
+            <text>{{item.name}}</text>
+          </label>
+        </view>
+      </radio-group>
+    </view>
+  </view>
+  <!-- navigate -->
+  <!-- 要点 
+       1、url可以写绝对路径/pages/下的xxx，也可以写相对路径../xxx/xxx
+  -->
+  <!-- 疑问：
+      1.tabBar 页面指的是什么？
+  -->
+  <view class="title">组件十一：navigate</view>
+  <view class="content">
+    <!-- sample.wxml -->
+    <view class="btn-area">
+      <navigator
+        url="/pages/navigate/navigate?title=navigate"
+        hover-class="navigator-hover"
+      >
+        跳转到新页面
+      </navigator>
+      <navigator
+        url="../pay/pay?title=redirect"
+        open-type="redirect"
+        hover-class="other-navigator-hover"
+      >
+        在当前页打开(关闭当前页面，跳转到应用内的某个页面)
+      </navigator>
+      <navigator
+        url="/page/index/index"
+        open-type="switchTab"
+        hover-class="other-navigator-hover"
+      >
+        切换 Tab(跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面)
+      </navigator>
+      <navigator
+        target="miniProgram"
+        open-type="navigate"
+        app-id=""
+        path=""
+        extra-data=""
+        version="release"
+      >
+        打开绑定的小程序
+      </navigator>
+    </view>
+  </view>
+</scroll-view>

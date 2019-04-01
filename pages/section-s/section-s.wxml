@@ -1,0 +1,82 @@
+<view class="section-wrapper">
+  <view class="section-title">{{cTitle}}</view>
+  <view class="section-detail" wx:if="{{itemId == 1}}">跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面</view>
+  <view class="section-detail" wx:if="{{itemId == 2}}">
+    显示消息提示框
+    <view class="section-notice">showLoading和showToast 同时只能显示一个</view>
+    <view class="section-notice">wx.showToast 应与 wx.hideToast 配对使用</view>
+  </view>
+  <view class="section-detail" wx:if="{{itemId == 3}}">显示模态对话框</view>
+  <view class="section-detail" wx:if="{{itemId == 4}}">显示 loading 提示框。需主动调用 wx.hideLoading 才能关闭提示框</view>
+  <view class="section-detail" wx:if="{{itemId == 5}}">显示操作菜单</view>
+  <view class="section-detail" wx:if="{{itemId == 6}}">在当前页面显示导航条加载动画</view>
+  <view class="section-detail" wx:if="{{itemId == 7}}">动态设置当前页面的标题</view>
+  <view class="section-detail" wx:if="{{itemId == 8}}">设置页面导航条颜色</view>
+  <view class="section-detail" wx:if="{{itemId == 9}}">动态设置下拉背景字体、loading 图的样式</view>
+  <view class="section-detail" wx:if="{{itemId == 10}}">动态设置窗口的背景色</view>
+  <view class="section-detail" wx:if="{{itemId == 11}}">见home.js和api.js</view>
+  <view class="section-detail" wx:if="{{itemId == 12}}">见home.js和api.js</view>
+  <view class="section-detail" wx:if="{{itemId == 13}}">见home.js和api.js</view>
+  <view class="section-detail" wx:if="{{itemId == 14}}">见home.js和api.js</view>
+  <view class="section-detail" wx:if="{{itemId == 15}}">见home.js和api.js</view>
+  <view class="section-content">
+    <view class="section-main main1" wx:if="{{itemId == 1}}">
+      <button class="button" type="default" bindtap="default">
+        点击跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
+      </button>
+    </view>
+    <view class="section-main main2" wx:if="{{itemId == 2}}">
+      <button class="button" type="default" bindtap="showtoast">
+        点我显示toast
+      </button>
+    </view>
+    <view class="section-main main3" wx:if="{{itemId == 3}}">
+      <button class="button" type="default" bindtap="showmodal">
+        点我显示modal
+      </button>
+    </view>
+    <view class="section-main main4" wx:if="{{itemId == 4}}">
+      <button class="button" type="default" bindtap="showloading">
+        点我显示loading
+      </button>
+    </view>
+    <view class="section-main main5" wx:if="{{itemId == 5}}">
+      <button class="button" type="default" bindtap="showactionsheet">
+        点我显示actionsheet
+      </button>
+    </view>
+    <view class="section-main main5" wx:if="{{itemId == 6}}">
+       <button class="button" type="default" bindtap="showNavLoading">
+        在当前页面显示导航条加载动画
+      </button>
+    </view>
+    <view class="section-main main5" wx:if="{{itemId == 7}}">
+       <button class="button" type="default" bindtap="setNavTitle">
+        动态设置当前页面的标题
+      </button>
+    </view>
+    <view class="section-main main5" wx:if="{{itemId == 8}}">
+       <button class="button" type="default" bindtap="setNavColor">
+        设置页面导航条颜色
+      </button>
+    </view>
+    <view class="section-main main5" wx:if="{{itemId == 9}}">
+       <button class="button" type="default" bindtap="setBgStyle">
+        动态设置下拉背景字体、loading 图的样式
+      </button>
+    </view>
+    <view class="section-main main5" wx:if="{{itemId == 10}}">
+       <button class="button" type="default" bindtap="setBgColor">
+        动态设置窗口的背景色
+      </button>
+    </view>
+    <view class="section-main main5" wx:if="{{itemId == 16}}">
+       <button class="button" type="default" bindtap="startPullDown">
+       开始下拉刷新。调用后触发下拉刷新动画，效果与用户手动下拉刷新一致。
+      </button>
+       <button class="button" type="default" bindtap="stopPullDown">
+       停止当前页面下拉刷新。
+      </button>
+    </view>
+  </view>
+</view>

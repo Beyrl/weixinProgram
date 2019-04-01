@@ -1,0 +1,18 @@
+.column-title{
+  color:#727171a9;
+}
+.column-content{
+  margin:50rpx 0 50rpx;
+  padding:30rpx 0 20rpx;
+  text-align: center;
+  color:#999;
+}
+.time{
+  margin:0 10rpx;
+  color:#FC481A;
+  font-size:40rpx;
+  font-weight:bold;
+}
+.button{
+  margin-top:20rpx;
+}

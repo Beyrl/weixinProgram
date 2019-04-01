@@ -1,0 +1,52 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.section-wrapper{
+  background:#fdfdfd;
+  padding:10rpx 20rpx;
+}
+.section-title{
+  width:100%;
+  display: block;
+  font-size:50rpx;
+  font-weight: bold;
+  overflow:hidden;
+  white-space:normal;
+  word-break:break-all;
+  word-wrap:break-word;
+ 
+}
+.section-detail,.section-notice,.section-main-title{
+  display: inline-block;
+  font-size:30rpx;
+  line-height:56rpx;
+  color:#999;
+}
+.section-main{
+  margin-top:50rpx;
+  width:100%;
+  padding:10rpx 0 100rpx;
+  border-radius:8rpx;
+  background:#fcfcfc;
+}
+.section-notice{
+  margin-top:50rpx;
+  width:100%;
+  padding:10rpx;
+  border-radius:8rpx;
+  background:#f3eeee;
+  color:black;
+}
+.section-main-title{
+  margin-top:20rpx;
+}
+.text-indent{
+  text-indent: 2em;
+}

@@ -1,0 +1,18 @@
+<view class="section-wrapper">
+  <text>redirext进来点我</text>
+  <button class="button" type="default" bindtap='wxredirect4'>
+    点击我关闭当前页面跳转回
+  </button>
+  <text>relaunch进来点我</text>
+  <button class="button" type="default" bindtap='wxrelaunch'>
+    点击我关闭所有页面
+  </button>
+  <text>navigateBack直接进来点我</text>
+  <button class="button" type="default" bindtap='wxnavigateBack1'>
+    点击我回退1个
+  </button>
+  <text>navigateBack进section-r-1再进section-r-2点我</text>
+  <button class="button" type="default" bindtap='wxnavigateBack1'>
+    点击我回退1个
+  </button>
+</view>

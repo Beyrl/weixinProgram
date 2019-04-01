@@ -1,0 +1,91 @@
+.api-menu{
+  height:100vh;
+  background:#fdfdfd;
+}
+.attention{
+  position:fixed;
+  top:-50rpx;
+  display:flex;
+  align-items: center;
+  align-content:center;
+  width:100%;
+  padding:10rpx 40rpx;
+  background:rgba(240, 220, 41, 1);
+  color:#FC481A;
+  font-size:28rpx;
+  z-index:999;
+}
+.attention .attention-icon{
+  margin-right:15rpx;
+}
+.content-list{
+  display:flex;
+  height:100%;
+}
+.content-list .list-scroll{
+  width:100%;
+  height:calc(100vh-10rpx);
+  padding:10rpx 0 0 30rpx;
+}
+.content-list .list-scroll .list-scroll-left{
+  padding:20rpx 70rpx 20rpx 0;
+  font-size:42rpx;
+  color:#515151;
+}
+.list-scroll-left .item-name{
+  display:inline-block;
+  width:100%;
+  padding:15rpx 0;
+  background:#f5f0f0;
+  color:#FC481A;
+}
+.list-scroll-left .item-content{
+  width:100%;
+  background:#fff;
+  border-radius:8rpx;
+}
+.item-content .item-group{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:30rpx 0;
+  line-height:42rpx;
+  border-bottom:1rpx solid #f5f0f0;
+}
+.item-content .item-group .nametitle{
+  width:60%;
+  white-space:normal;
+  word-break:break-all;
+  word-wrap:break-word; 
+}
+.item-content .item-group .nametext{
+  width:30%;
+  height:40rpx;
+  text-align: right;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-size:30rpx;
+  color:#999;
+}
+.content-list .list-index-right{
+  position: fixed;
+  right: 5rpx;
+  top: 3%;
+  /* height: 90%; */
+  width: 50rpx;
+  font-size:28rpx;
+  line-height:34rpx;
+  color:#515151;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 999;
+}
+.letter{
+  height:34rpx;
+}
+.letter .active{
+  color:#FC481A;
+  font-weight: bold;
+  font-size:34rpx;
+}

@@ -1,0 +1,42 @@
+<view class="section-wrapper">
+  <text class="section-title">{{cTitle}}</text>
+  <!-- detail:navigateTo -->
+  <view class="section-detail" wx:if="{{itemId == 1}}">
+    <view>保留当前页面，跳转到应用内的某个页面。</view>
+    <view>但是不能跳到 tabbar 页面。</view>
+    <view>使用 wx.navigateBack 可以返回到原页面。</view>
+    <view>小程序中页面栈最多十层。</view>
+  </view>
+  <!-- detail:navigateBack -->
+  <view class="section-detail" wx:if="{{itemId == 2}}">
+    <view>关闭当前页面，返回上一页面或多级页面。</view>
+    <view>可通过 getCurrentPages 获取当前的页面栈，决定需要返回几层。</view>
+  </view>
+  <!-- detail:nextTick -->
+   <view class="section-detail" wx:if="{{itemId == 3}}">
+    <view>延迟一部分操作到下一个时间片再执行。（类似于 setTimeout）</view>
+    <view class="section-notice">因为自定义组件中的 setData 和 triggerEvent 等接口本身是同步的操作，当这几个接口被连续调用时，都是在一个同步流程中执行完的，因此若逻辑不当可能会导致出错。</view>
+    <text>一个极端的案例：</text>
+    <view>当父组件的 setData 引发了子组件的 triggerEvent，进而使得父组件又进行了一次 setData，期间有通过 wx:if 语句对子组件进行卸载，就有可能引发奇怪的错误，所以对于不需要在一个同步流程内完成的逻辑，可以使用此接口延迟到下一个时间片再执行。</view>
+  </view>
+  <view class="section-content">
+    <!-- section:navigateTo -->
+    <view class="section-main main1" wx:if="{{itemId == 1}}"></view>
+    <!-- section:navigateBack -->
+    <view class="section-main main2" wx:if="{{itemId == 2}}">
+      <text class="column-title"></text>
+      <view class="column-content">
+        <button class="button" type="default" bindtap="navigateBack1">点我直接跳到section-r-2</button>
+        <button class="button" type="default" bindtap="navigateBack2">点我跳到section-r-1再跳到section-r-2</button>
+      </view>
+    </view>
+    <!-- section:nextTick -->
+    <view class="section-main main3" wx:if="{{itemId == 3}}">
+      <text class="column-title"></text>
+      <view class="column-content">
+        <button class="button" type="default" bindtap="navigateBack1">点我直接跳到section-r-2</button>
+        <button class="button" type="default" bindtap="navigateBack2">点我跳到section-r-1再跳到section-r-2</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<view class="section-wrapper">
+  <text class="section-title">{{cTitle}}</text>
+  <!-- detail: -->
+  <view class="section-detail" wx:if="{{itemId == 1}}">监听窗口尺寸变化事件,如：屏幕旋转事件</view>
+  <view class="section-content">
+    <!-- section:navigateTo -->
+    <view class="section-main main2" wx:if="{{itemId == 1}}">
+       <input maxlength="10" placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}" />
+        <button class="buttonInp" bindtap="bindButtonTap">使得输入框获取焦点</button>
+        <view>新区域宽度：{{newWidth}}</view>
+        <view>新区域高度：{{newHeight}}</view>
+        <view>旋转屏幕试一下~</view>
+    </view>
+  </view>
+</view>

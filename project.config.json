@@ -1,0 +1,114 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.2",
+	"appid": "wx708455604db7621b",
+	"projectname": "%E5%B0%8F%E6%81%92%E6%94%B6%E9%92%B1",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 9,
+			"list": [
+				{
+					"id": 0,
+					"name": "扫码进入-生产",
+					"pathName": "pages/pay/pay",
+					"query": "q=http%3A%2F%2Fassemblepay.hengchang6.com%2Fdev%2Fquery%2Fp%2F%3Fq%3D500025000001",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "支付成功页",
+					"pathName": "pages/result/result",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 2,
+					"name": "商品页",
+					"pathName": "pages/item/item",
+					"query": "index=3",
+					"scene": "1001"
+				},
+				{
+					"id": 3,
+					"name": "webview",
+					"pathName": "pages/webview/webview",
+					"query": "src=http://testevent.pinkecard.com/v1/sites/201812Good",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "结算页",
+					"pathName": "pages/cart/cart",
+					"query": "index=0",
+					"scene": "1001"
+				},
+				{
+					"id": 5,
+					"name": "扫码进入-中能达",
+					"pathName": "pages/pay/pay",
+					"query": "q=http%3A%2F%2Ftest-c.pay.pinkecard.com%2Ftest%2Fpay%3Fq%3D520181213dbcdd29ba4714a5cb13562fba4cee943",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "home",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 7,
+					"name": "api",
+					"pathName": "pages/api/api",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "sectionC",
+					"pathName": "pages/section-c/section-c",
+					"query": "section=A&id=A1&title=clearInterval",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,42 @@
+<view class="section-wrapper">
+  <text class="section-title">{{cTitle}}</text>
+  <!--detail : wx.relaunch -->
+  <view class="section-detail" wx:if="{{itemId == 1}}">
+    <view>关闭所有页面，打开到应用内的某个页面</view>
+    <view>应用场景举例：</view>
+    <view class="text-indent">
+      用户支付后跳转到支付成功页面，点击按钮，这时应该跳转回相应的页面，并关闭其它打开的页面，包括其他页面的一些存储也都清空 ，一般会在进入多个子页面的时候用到。（这个最好用在返回至首页）
+    </view>
+    <view class="section-notice">这个跳转有个坑，就是跳转页面后页面会闪烁一下，完全影响用户操作体验，实在是不怎么好。</view>
+  </view>
+  <!--detail : wx.redirect -->
+   <view class="section-detail" wx:if="{{itemId == 2}}">
+    <view>关闭当前页面，跳转到应用内的某个页面。但是不允许跳转到 tabbar 页面。</view>
+    <view class="section-notice">这个跳转有个坑，就是跳转页面后页面会闪烁一下，完全影响用户操作体验，实在是不怎么好。</view>
+  </view>
+  <view class="section-content">
+    <!--section : wx.relaunch -->
+    <view class="section-main main1" wx:if="{{itemId == 1}}">
+      <button class="button" type="relaunch" bindtap="wxdefault">
+        点击关闭所有页面，打开应用内某个页面
+      </button>
+      <view class="section-notice text-indent">
+        路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2'
+      </view>
+      <button class="button" type="relaunch" bindtap="wxdefault2">
+        点击去往下一个子页面
+      </button>
+    </view>
+    <!--section : wx.redirect -->
+    <view class="section-main main2" wx:if="{{itemId == 2}}">
+      <text class="section-main-title">路径设为tabbar页面点击如下按钮不能成功</text>
+      <button class="button" type="default" bindtap="wxredirect1">
+        关闭当前页面，跳转到应用内的某个页面
+      </button>
+      <text class="section-main-title">去往下一个子页面，做一个多子页面例子</text>
+      <button class="button" type="default" bindtap="wxredirect2">
+        去往下一个子页面
+      </button>
+    </view>
+  </view>
+</view>

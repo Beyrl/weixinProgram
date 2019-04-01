@@ -1,0 +1,19 @@
+<view class="section-wrapper">
+  <text class="section-title">{{cTitle}}</text>
+  <!-- detail: -->
+  <view class="section-detail" wx:if="{{itemId == 1}}">获取菜单按钮（右上角胶囊按钮）的布局位置信息。坐标信息以屏幕左上角为原点。</view>
+  <view class="section-content">
+    <!-- section:navigateTo -->
+    <view class="section-main main2" wx:if="{{itemId == 1}}">
+      <button class="button" type="default" bindtap="consoleText">
+        点我打印
+      </button>
+      <view>胶囊宽：{{bWidth}}</view>
+      <view>胶囊高：{{bHeight}}</view>
+      <view>胶囊top：{{bTop}}</view>
+      <view>胶囊right：{{bRight}}</view>
+      <view>胶囊bottom：{{bBottom}}</view>
+      <view>胶囊left：{{bLeft}}</view>
+    </view>
+  </view>
+</view>

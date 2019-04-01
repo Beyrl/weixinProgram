@@ -1,0 +1,15 @@
+<view class="section-wrapper">
+  <text class="section-title">{{cTitle}}</text>
+  <!-- detail:navigateTo -->
+  <view class="section-detail" wx:if="{{itemId == 1}}">将页面滚动到目标位置</view>
+  <view class="section-content">
+    <!-- section:navigateBack -->
+    <view class="section-main main1" wx:if="{{itemId == 1}}">
+      <text class="column-title"></text>
+      <view class="column-content">
+        <button class="button" type="default" bindtap="scrollTo">点我将页面滚动到目标位置</button>
+        <button class="buttontop" type="default" bindtap="scrollTotop">点我将页面滚动到顶部</button>
+      </view>
+    </view>
+  </view>
+</view>

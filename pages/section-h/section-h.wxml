@@ -1,0 +1,34 @@
+<view class="section-wrapper">
+  <text class="section-title">{{cTitle}}</text>
+  <!-- detail: -->
+  <view class="section-detail" wx:if="{{itemId == 1}}">隐藏消息提示框</view>
+  <view class="section-detail" wx:if="{{itemId == 2}}">隐藏 loading 提示框</view>
+  <view class="section-detail" wx:if="{{itemId == 3}}">在当前页面隐藏导航条加载动画</view>
+  <view class="section-content">
+    <!-- section:navigateTo -->
+    <view class="section-main main2" wx:if="{{itemId == 1}}">
+      <button class="button" type="default" bindtap="showtoast">
+        点我显示toast
+      </button>
+      <button class="button" type="default" bindtap="hidetoast">
+        点我隐藏toast
+      </button>
+    </view>
+    <!-- section:navigateBack -->
+    <view class="section-main main2" wx:if="{{itemId == 2}}">
+      <view class="column-content">
+        <button class="button" type="default" bindtap="showloading">
+          点我显示loading
+        </button>
+      </view>
+    </view>
+    <!-- section:navigateBack -->
+    <view class="section-main main2" wx:if="{{itemId == 3}}">
+      <view class="column-content">
+        <button class="button" type="default" bindtap="hideBarLoading">
+          点我隐藏导航条加载动画
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

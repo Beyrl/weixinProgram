@@ -1,0 +1,56 @@
+<!-- 
+    还有待优化 ：
+      1.touchmove和bindscroll 部分的算法太慢，在手机上延迟太重。原因可能是因为来不及循环太多次。
+      2.距离还有问题。
+-->
+<view class="api-menu">
+  <!-- notice  -->
+  <view class="attention" animation="{{animationData}}">
+    <icon class="attention-icon" type="warn" size="16" />
+    <text class="attention-text">The api list below just the frequently-used.</text>
+  </view>
+  <!-- content-list -->
+  <view class="content-list">
+    <scroll-view 
+      class="list-scroll"
+      scroll-y
+      scroll-with-animation
+      enable-back-to-top
+      scroll-into-view="{{scrollIntoView}}"
+      bindscroll = "scrollPage"
+    >
+      <view class="list-scroll-left" 
+            wx:for="{{ApiItems}}" 
+            wx:for-item="ApiItems" 
+            wx:key="{{ApiItems.itemName}}" 
+            id="{{ApiItems.itemName}}"
+            data-index="{{ApiItems.itemName}}">
+        <text class="item-name">{{ApiItems.itemName}}</text>
+        <view class="item-content">
+          <view class="item-group" 
+                wx:for="{{ApiItems.items}}" 
+                wx:for-item="user" 
+                wx:key="{{ApiItems.itemName}}"
+                data-index="{{ApiItems.itemName}}"
+                data-id="{{user.id}}"
+                data-title="{{user.title}}"
+                catchtap="turnPage"
+          >
+            <text class="nametitle">{{user.title}}</text>
+            <text class="nametext">{{user.name}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view> 
+    <view class="list-index-right" catchtouchmove="touchmove"  catchtouchend="touchend">
+        <view bindtap="tabLetter" 
+          data-index="{{item}}"
+          id="{{item}}" 
+          wx:for="{{letters}}" 
+          wx:key=""
+          class="flex box box-align-center box-pack-center letter">
+          <text class="letter-text {{selected == item ? 'active' : ''}}">{{item}}</text>
+        </view>
+      </view>                                                                              
+  </view>
+</view>

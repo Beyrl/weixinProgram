@@ -1,0 +1,4 @@
+/* pages/section-o/section-o.wxss */
+.buttonInp{
+  margin-top:50rpx;
+}

@@ -1,0 +1,21 @@
+<view class="section-wrapper">
+  <text class="section-title">{{cTitle}}</text>
+  <view class="section-detail" wx:if="{{itemId == 1}}">取消由 setInterval 设置的定时器。</view>
+  <view class="section-content">
+    <view class="section-main main1" wx:if="{{itemId == 1}}">
+      <text class="column-title">距离2020年还有：</text>
+      <view class="column-content">
+        <text class="time">{{cDay}}</text>日
+        <text class="time">{{cHour}}</text>时
+        <text class="time">{{cMinute}}</text>分
+        <text class="time">{{cSecond}}</text>秒
+      </view>
+      <button class="button" type="default" bindtap="default">
+        {{textInner}}
+      </button>
+    </view>
+    <view class="section-main main2" wx:if="{{itemId == 2}}">
+      2
+    </view>
+  </view>
+</view>
