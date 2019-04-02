@@ -1,56 +1,18 @@
-// pages/section-h/section-h.js
+// pages/section-t/section-t.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cTitle: '',
-    itemId: 0,
-    index: '',
-  },
-  showtoast() {
-    wx.showToast({
-      title: '啦啦成功拉埃',
-      icon: 'success',
-      duration: 1000000,
-    })
-  },
-  hidetoast() {
-    wx.hideToast()
-  },
-  showloading() {
-    wx.showLoading({
-      title: '加载中',
-    })
 
-    setTimeout(function () {
-      wx.hideLoading()
-    }, 2000)
   },
-  hideBarLoading() {
-    wx.hideNavigationBarLoading()
-  },
-  hideshare() {
-    wx.hideShareMenu()
-  },
-  showshare() {
-    wx.showShareMenu({
-      withShareTicket: true
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let id = options.id.charAt(1);
-    let _this = this
-    this.setData({
-      cTitle: options.title,
-      itemId: id,
-      index: options.section,
-    })
-    wx.showNavigationBarLoading()
+
   },
 
   /**

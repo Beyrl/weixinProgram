@@ -1,4 +1,3 @@
-// pages/section-o/section-o.js
 Page({
 
   /**
@@ -8,33 +7,30 @@ Page({
     cTitle: '',
     itemId: 0,
     index: '',
-    focus: false,
-    newWidth: '',
-    newHeight: ''
   },
-  bindButtonTap() {
-    this.setData({
-      focus: true
-    })
+  onShareAppMessage(options) {
+    console.log(options)
   },
-  onResize: function (res) {
-    this.setData({
-      newWidth: res.size.windowWidth,
-      newHeight: res.size.windowHeight,
-    })
-  },
-  openlocation() {
-    wx.getLocation({
-      type: 'gcj02', // 返回可以用于wx.openLocation的经纬度
-      success(res) {
-        console.log(res)
-        const latitude = res.latitude
-        const longitude = res.longitude
-        wx.openLocation({
-          latitude,
-          longitude,
-          scale: 18
-        })
+  updateShareMenu(){
+    console.log(1)
+    // wx.showShareMenu({
+    //   withShareTicket: true
+    // })
+    wx.updateShareMenu({
+      withShareTicket: true,
+      isUpdatableMessage: true,
+      activityId: '', // 活动 ID
+      templateInfo: {
+        parameterList: [
+          {
+            name: 'member_count',
+            value: '1'
+          },
+          {
+            name: 'room_limit',
+            value: '3'
+          }
+        ]
       }
     })
   },
@@ -49,54 +45,55 @@ Page({
       itemId: id,
       index: options.section,
     })
+    this.updateShareMenu()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    
   }
 })

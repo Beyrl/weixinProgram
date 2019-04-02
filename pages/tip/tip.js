@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    state: '',
     animationData: {},
     tiplist:[
       {
@@ -57,8 +58,11 @@ Page({
       }
     ]
   },
-  showChildList(){
-    Animation.height(auto)
+  showChildList(e){
+    this.setData({
+      state: e.currentTarget.dataset.key,
+    });
+  
   },
   /**
    * 生命周期函数--监听页面加载

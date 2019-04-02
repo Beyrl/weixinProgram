@@ -21,18 +21,20 @@
     "pages/section-r/section-r",
     "pages/section-r-1/section-r-1",
     "pages/section-r-2/section-r-2",
-    "pages/section-s/section-s"
+    "pages/section-s/section-s",
+    "pages/section-t/section-t",
+    "pages/section-u/section-u"
   ],
   "window":{
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ffcbf0",  
+    "navigationBarBackgroundColor": "#B3DDD1",  
     "navigationBarTitleText": "小程序文档",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "backgroundColor": "#ffcbf0",
+    "backgroundColor": "#B3DDD1",
     "color":"#999",
-    "selectedColor":"#FC481A",
+    "selectedColor":"#EE9C6A",
     "borderStyle":"white",
     "list": [
       {

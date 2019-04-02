@@ -3,6 +3,7 @@
   padding:0 30rpx;
 }
 .tiplist{
+  position: relative;
   height:140rpx;
   line-height:140rpx;
   overflow:hidden;
@@ -30,7 +31,6 @@
 .tiplist-content{
   z-index:10;
   width:100%;
-  background:red;
 }
 .tiplist-group{
   padding:0 20rpx;

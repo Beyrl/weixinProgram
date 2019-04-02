@@ -4,6 +4,7 @@
   <view class="section-detail" wx:if="{{itemId == 1}}">隐藏消息提示框</view>
   <view class="section-detail" wx:if="{{itemId == 2}}">隐藏 loading 提示框</view>
   <view class="section-detail" wx:if="{{itemId == 3}}">在当前页面隐藏导航条加载动画</view>
+  <view class="section-detail" wx:if="{{itemId == 4}}">隐藏转发按钮</view>
   <view class="section-content">
     <!-- section:navigateTo -->
     <view class="section-main main2" wx:if="{{itemId == 1}}">
@@ -27,6 +28,17 @@
       <view class="column-content">
         <button class="button" type="default" bindtap="hideBarLoading">
           点我隐藏导航条加载动画
+        </button>
+      </view>
+    </view>
+    <!-- section:navigateBack -->
+    <view class="section-main main2" wx:if="{{itemId == 4}}">
+      <view class="column-content">
+        <button class="button" type="default" bindtap="hideshare">
+          点我隐藏转发按钮        
+        </button>
+        <button class="button" type="default" bindtap="showshare">
+          点我显示转发按钮        
         </button>
       </view>
     </view>

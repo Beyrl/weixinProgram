@@ -1,0 +1,11 @@
+<view class="section-wrapper">
+  <text class="section-title">{{cTitle}}</text>
+  <view class="section-detail" wx:if="{{itemId == 1}}">更新转发属性</view>
+  <view class="section-content">
+    <view class="section-main main1" wx:if="{{itemId == 1}}">
+      <button class="button" type="default" open-type="share">
+        用户点击后触发onshareappmessage
+      </button>
+    </view>
+  </view>
+</view>

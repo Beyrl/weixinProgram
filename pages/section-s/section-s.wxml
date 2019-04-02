@@ -19,6 +19,8 @@
   <view class="section-detail" wx:if="{{itemId == 13}}">见home.js和api.js</view>
   <view class="section-detail" wx:if="{{itemId == 14}}">见home.js和api.js</view>
   <view class="section-detail" wx:if="{{itemId == 15}}">见home.js和api.js</view>
+  <view class="section-detail" wx:if="{{itemId == 17}}">将数据存储在本地缓存中指定的 key 中。会覆盖掉原来该 key 对应的内容。数据存储生命周期跟小程序本身一致，即除用户主动删除或超过一定时间被自动清理，否则数据都一直可用。单个 key 允许存储的最大数据长度为 1MB，所有数据存储上限为 10MB。</view>
+  <view class="section-detail" wx:if="{{itemId == 18}}">保存文件到本地。注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用</view>
   <view class="section-content">
     <view class="section-main main1" wx:if="{{itemId == 1}}">
       <button class="button" type="default" bindtap="default">
@@ -76,6 +78,38 @@
       </button>
        <button class="button" type="default" bindtap="stopPullDown">
        停止当前页面下拉刷新。
+      </button>
+    </view>
+    <view class="section-main main5" wx:if="{{itemId == 17}}">
+       <button class="button" type="default" bindtap="setstorage">
+       点击我setstorage1
+      </button>
+      <button class="button" type="default" bindtap="setstorage">
+      点击我setstorage2
+      </button>
+      <button class="button" type="default" bindtap="getstorage">
+       点击我getstorage1
+      </button>
+      <button class="button" type="default" bindtap="removestorage">
+       点击我removestorage1
+      </button>
+      <text>{{storage}}</text>
+    </view>
+    <view class="section-main main5" wx:if="{{itemId == 18}}">
+       <button class="button" type="default" bindtap="chooseImage1">
+          点我调用相册和相机
+      </button>
+      <button class="button" type="default" bindtap="chooseImage2">
+          点我只调用相册
+      </button>
+       <button class="button" type="default" bindtap="chooseImage3">
+          点我只调用相机
+      </button>
+      <button class="button" type="default" bindtap="savefile">
+          点我选择图片或照相成功后保存图片
+      </button>
+      <button class="button" type="default" bindtap="savefile">
+          点我选择图片或照相成功后保存图片
       </button>
     </view>
   </view>

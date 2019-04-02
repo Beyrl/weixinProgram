@@ -39,7 +39,18 @@ Page({
           id: "C2",
           title: "clearTimeout",
           name: "取消定时器",
-        }],
+        },
+        {
+          id: "C3",
+          title: "wx.clearStorage",
+          name: "清理本地数据缓存",
+        },
+        {
+          id: "C4",
+          title: "wx.chooseLocation",
+          name: "打开地图选择位置。",
+        }
+        ],
     },
     { itemName: "D",
       items: [
@@ -71,7 +82,33 @@ Page({
         id: "G1",
         title: "wx.getMenuButtonBoundingClientRect",
         name: "获取菜单按钮（右上角胶囊按钮）的布局位置信息。坐标信息以屏幕左上角为原点。"
-      }],
+      },
+      {
+        id: "G2",
+        title: "wx.getStorage",
+        name: "从本地缓存中异步获取指定 key 的内容"
+      },
+      {
+        id: "G3",
+        title: "wx.getLocation",
+        name: "获取当前的地理位置、速度。当用户离开小程序后，此接口无法调用。"
+      },
+      {
+        id: "G4",
+        title: "wx.getShareInfo?????",
+        name: "获取转发详细信息"
+      },
+      {
+        id: "G5",
+        title: "wx.getSavedFileList",
+        name: "获取该小程序下已保存的本地缓存文件列表"
+      },
+      {
+        id: "G6",
+        title: "wx.getSavedFileInfo",
+        name: "获取本地文件的文件信息。此接口只能用于获取已保存到本地的文件，若需要获取临时文件信息，请使用 wx.getFileInfo() 接口"
+      },
+      ],
     }, 
     { itemName: "H",
       items: [
@@ -89,7 +126,13 @@ Page({
         id: "H3",
         title: "wx.hideNavigationBarLoading",
         name: "在当前页面隐藏导航条加载动画",
-      }],
+      },
+      {
+        id: "H4",
+        title: "wx.hideShareMenu",
+        name: "隐藏转发按钮",
+      },
+      ],
     }, 
     { itemName: "I",
       items: [
@@ -191,6 +234,11 @@ Page({
         id: "O2",
         title: "wx.offWindowResize",
         name: "取消监听窗口尺寸变化事件",
+      },
+      {
+        id: "O3",
+        title: "wx.openLocation",
+        name: "使用微信内置地图查看位置",
       },
       ],
     }, 
@@ -309,8 +357,39 @@ Page({
         title: "wx.startPullDownRefresh",
         name: "开始下拉刷新。调用后触发下拉刷新动画，效果与用户手动下拉刷新一致。"
       },
+      {
+        id: "S17",
+        title: "wx.setStorage",
+        name: "将数据存储在本地缓存中指定的 key 中。"
+      },
+      {
+        id: "S18",
+        title: "wx.saveFile",
+        name: "保存文件到本地。注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用 ."
+      },
       ]
-    }]
+    },
+    {
+      itemName: "T",
+      items: [
+        {
+          id: "T1",
+          title: "wx.reLaunch",
+          name: "关闭所有页面，打开到应用内的某个页面",
+        }
+      ],
+    },
+    {
+      itemName: "U",
+      items: [
+        {
+          id: "U1",
+          title: "wx.updateShareMenu??????",
+          name: "更新转发属性",
+        }
+      ],
+    },
+    ]
   },
   /**
    * 方法
