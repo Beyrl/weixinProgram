@@ -15,23 +15,15 @@ Page({
         child:[
           {
             id:"a",
-            desc:"1"
+            desc:"JSON的Key必须包裹在一个双引号中"
           },
           {
             id: "b",
-            desc: "2"
+            desc: "JSON的值只能是以下几种数据格式"
           },
           {
             id: "c",
-            desc: "3"
-          },
-          {
-            id: "d",
-            desc: "4"
-          },
-          {
-            id: "e",
-            desc: "5"
+            desc: "JSON 文件中无法使用注释"
           }
         ]
       },
@@ -40,13 +32,34 @@ Page({
         title: "WXML模板",
         child: [
           {
-            desc: "4"
+            desc: "属性值必须被包裹在双引号中"
           },
           {
-            desc: "5"
+            desc: "变量名是大小写敏感的"
           },
           {
-            desc: "6"
+            desc: "没有被定义的变量或被设置为undefined 的变量不会被同步到 wxml 中"
+          },
+          {
+            desc: "使用 'wx:if' 来判断是否需要渲染该代码块,使用 wx:elif 和 wx:else 来添加一个 else 块："
+          },
+          {
+            desc: "使用 wx:for 控制属性绑定一个数组,默认数组的当前项的下标变量名默认为 index，数组当前项的变量名默认为 item"
+          },
+          {
+            desc: "使用 wx:for-item 指定数组当前元素的变量名，使用 wx:for-index 指定数组当前下标的变量名："
+          },
+          {
+            desc: "wx:key 来指定列表中项目的唯一的标识符。??"
+          },
+          {
+            desc: "WXML提供模板（template），可以在模板中定义代码片段，然后在不同的地方调用。"
+          },
+          {
+            desc: "两种文件引用方式import和include。"
+          },
+          {
+            desc: "两种文件引用方式import和include。"
           }
         ]
       },
@@ -55,13 +68,16 @@ Page({
         title: "WXSS样式",
         child: [
           {
-            desc: "7"
+            desc: "rpx与px的换算"
           },
           {
-            desc: "8"
+            desc: "WXSS的引用"
           },
           {
-            desc: "9"
+            desc: "WXSS 选择器优先级权重"
+          },
+          {
+            desc: "WeUI.wxss基础样式库。"
           }
         ]
       }
