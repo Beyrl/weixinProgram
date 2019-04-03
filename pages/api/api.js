@@ -442,7 +442,7 @@ Page({
       timingFunction: 'linear',
     })
 
-    this.animation = animation
+    //this.animation = animation
 
     animation.top(0).step()
     animation.opacity(0).step({ delay: 3000,duration:2000 })

@@ -27,6 +27,11 @@
 .icon-next{
   width:33rpx;
   height:17rpx;
+  transform:rotate(0deg);
+  transition:transform 0.5s;
+}
+.icon-next.active{
+  transform:rotate(180deg); 
 }
 .tiplist-content{
   z-index:10;
