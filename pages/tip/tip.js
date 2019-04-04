@@ -80,6 +80,21 @@ Page({
             desc: "WeUI.wxss基础样式库。"
           }
         ]
+      },
+      {
+        itemId: 4,
+        title: "JavaScript 脚本",
+        child: [
+          {
+            desc: "将JavaScript文件作为一个模块，通过module.exports 或者 exports 对外暴露接口。"
+          },
+          {
+            desc: "脚本执行顺序"
+          },
+          {
+            desc: "小程序的脚本的作用域同 NodeJS 更为相似"
+          }
+        ]
       }
     ],
     animationList: [],
