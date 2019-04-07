@@ -38,10 +38,14 @@
   width:100%;
 }
 .tiplist-group{
+  width:80%;
   padding:0 20rpx;
   color:#999;
   height:80rpx;
   line-height:80rpx;
   font-size:34rpx;
   border-bottom:1px solid #faf7f7;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

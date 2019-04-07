@@ -50,3 +50,14 @@
 .text-indent{
   text-indent: 2em;
 }
+.section-li{
+  font-size:34rpx;
+  color:#EE9C6A;
+}
+.center-li{
+  width:80%;
+  margin:auto;
+}
+.mg10{
+  margin:30rpx 0;
+}

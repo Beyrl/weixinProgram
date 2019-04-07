@@ -22,7 +22,10 @@
       <view class="tiplist-group"
             wx:for="{{tiplist.child}}" 
             wx:for-item="child" 
-            wx:key="{{child.id}}" >
+            wx:key="{{child.id}}" 
+            data-index = "{{tiplist.itemId}}"
+            id="{{index}}"
+            catchtap='navigateToPage'>
         {{child.desc}}
       </view>
     </view>

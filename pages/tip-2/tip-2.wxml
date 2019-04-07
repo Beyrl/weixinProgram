@@ -1,0 +1,18 @@
+<!--pages/tip-2/tip-2.wxml-->
+<view class="section-wrapper">
+  <text class="section-title">{{cTitle}}</text>
+  <view class="section-detail" >{{desc}}</view>
+  <view class="section-content">
+    <view class="section-main main1" wx:if="{{itemId == 0}}">
+      <rich-text bindtap="tap"></rich-text>
+    </view>
+    <view class="section-main main2" wx:if="{{itemId == 1}}">
+      
+      <image class="mg10" src="../../assets/image/tip1-2.png"></image>
+    </view>
+    <view class="section-main main2" wx:if="{{itemId == 2}}">
+      <image src="../../assets/image/tip3-3.png"></image>
+    </view>
+  </view>
+</view>
+

@@ -95,6 +95,117 @@ Page({
             desc: "小程序的脚本的作用域同 NodeJS 更为相似"
           }
         ]
+      },
+      {
+        itemId: 5,
+        title: "小程序宿主环境",
+        child: [
+          {
+            desc: "渲染层和逻辑层"
+          },
+          {
+            desc: "程序与页面"
+          },
+          {
+            desc: "事件"
+          },
+          {
+            desc: "兼容"
+          },
+        ]
+      },
+      {
+        itemId: 6,
+        title: "场景应用",
+        child: [
+          {
+            desc: "开发流程基本介绍"
+          },
+          {
+            desc: "界面常见的交互反馈"
+          },
+          {
+            desc: "发起HTTPS网络通信"
+          },
+          {
+            desc: "微信登录"
+          },
+          {
+            desc: "本地数据缓存"
+          },
+          {
+            desc: "设备能力"
+          },
+        ]
+      },
+      {
+        itemId: 7,
+        title: "小程序的协同工作和发布",
+        child: [
+          {
+            desc: "协同工作"
+          },
+          {
+            desc: "发布"
+          },
+          {
+            desc: "运营"
+          }
+        ]
+      },
+      {
+        itemId: 8,
+        title: "底层框架",
+        child: [
+          {
+            desc: "双线程模型"
+          },
+          {
+            desc: "组件系统"
+          },
+          {
+            desc: "原生组件"
+          },
+          {
+            desc: "小程序与客户端通信原理"
+          }
+        ]
+      },
+      {
+        itemId: 9,
+        title: "性能优化",
+        child: [
+          {
+            desc: " 启动"
+          },
+          {
+            desc: "页面层级准备"
+          },
+          {
+            desc: "数据通信"
+          },
+          {
+            desc: "视图层渲染"
+          },
+          {
+            desc: "原生组件通信"
+          }
+        ]
+      },
+      {
+        itemId: 10,
+        title: "小程序基础库的更新迭代",
+        child: [
+          {
+            desc: " 小程序基础库"
+          },
+          {
+            desc: "异常"
+          },
+          {
+            desc: "基础库的更新"
+          } 
+        ]
       }
     ],
     animationList: [],
@@ -140,6 +251,15 @@ Page({
     return wx.createAnimation({
       duration: 1000,
       timingFunction: '"linear"'
+    })
+  },
+  navigateToPage(e){
+    console.log(e)
+    let id=e.target.id,//第几个item下的第几条（从0开始）
+        index = e.target.dataset.index,//第几个item（从1开始）
+        desc = e._relatedInfo.anchorRelatedText
+    wx.navigateTo({
+      url: '../tip-'+ index +'/tip-'+ index +'?id=' + id + '&desc='+ desc,
     })
   },
   /**
