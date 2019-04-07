@@ -24,6 +24,7 @@
             wx:for-item="child" 
             wx:key="{{child.id}}" 
             data-index = "{{tiplist.itemId}}"
+            data-desc = "{{child.desc}}"
             id="{{index}}"
             catchtap='navigateToPage'>
         {{child.desc}}

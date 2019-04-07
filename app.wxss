@@ -37,7 +37,7 @@
   background:#fcfcfc;
 }
 .section-notice{
-  margin-top:50rpx;
+  margin:50rpx 0 30rpx;
   width:100%;
   padding:10rpx;
   border-radius:8rpx;
@@ -60,4 +60,27 @@
 }
 .mg10{
   margin:30rpx 0;
+}
+.mgb30{
+  margin-bottom:30rpx;
+}
+.section-code{
+  margin:10rpx 0;
+  color:#fd9554;
+  font-size:30rpx;
+}
+.code-wrapper{
+  background:rgba(179, 221, 209,0.4);
+  padding:20rpx 20rpx;
+  margin-bottom:30rpx;
+}
+.little-title{
+  display: inline-block;
+  font-size:32rpx;
+  line-height:56rpx;
+  color:black;
+}
+.span-text{
+  color:red;
+  font-weight:bold;
 }

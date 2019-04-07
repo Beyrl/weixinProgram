@@ -57,9 +57,6 @@ Page({
           },
           {
             desc: "两种文件引用方式import和include。"
-          },
-          {
-            desc: "两种文件引用方式import和include。"
           }
         ]
       },
@@ -257,7 +254,7 @@ Page({
     console.log(e)
     let id=e.target.id,//第几个item下的第几条（从0开始）
         index = e.target.dataset.index,//第几个item（从1开始）
-        desc = e._relatedInfo.anchorRelatedText
+        desc = e.target.dataset.desc
     wx.navigateTo({
       url: '../tip-'+ index +'/tip-'+ index +'?id=' + id + '&desc='+ desc,
     })

@@ -20,7 +20,11 @@ Page({
       desc:desc
     })
   },
-
+  turntoSec(){
+    wx.navigateTo({
+      url: '../tip-2-2/tip-2-2',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
