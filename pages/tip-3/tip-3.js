@@ -5,14 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    desc: '',
+    itemId: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let id = options.id;
+    let desc = options.desc
+    this.setData({
+      itemId: id,
+      desc: desc
+    })
   },
 
   /**

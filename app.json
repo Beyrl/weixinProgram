@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/api/api",
     "pages/tip/tip",
@@ -31,23 +31,23 @@
     "pages/section-t/section-t",
     "pages/section-u/section-u"
   ],
-  "window":{
+  "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#B3DDD1",  
+    "navigationBarBackgroundColor": "#B3DDD1",
     "navigationBarTitleText": "小程序文档",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "backgroundColor": "#B3DDD1",
-    "color":"#999",
-    "selectedColor":"#EE9C6A",
-    "borderStyle":"white",
+    "color": "#999",
+    "selectedColor": "#EE9C6A",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/home/home",
         "text": "组件",
-        "iconPath":"assets/image/btn-home.png",
-        "selectedIconPath":"assets/image/btn-home-active.png"
+        "iconPath": "assets/image/btn-home.png",
+        "selectedIconPath": "assets/image/btn-home-active.png"
       },
       {
         "pagePath": "pages/api/api",
@@ -62,6 +62,6 @@
         "selectedIconPath": "assets/image/btn-tip-active.png"
       }
     ]
-  }
-  
+  },
+  "sitemapLocation": "sitemap.json"
 }
