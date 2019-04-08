@@ -2,6 +2,10 @@
   <text class="section-title">{{cTitle}}</text>
   <!-- detail: -->
   <view class="section-detail" wx:if="{{itemId == 1}}">获取菜单按钮（右上角胶囊按钮）的布局位置信息。坐标信息以屏幕左上角为原点。</view>
+  <view class="section-detail" wx:if="{{itemId == 3}}">获取当前的地理位置、速度。当用户离开小程序后，此接口无法调用。</view>
+  <view class="section-detail" wx:if="{{itemId == 4}}">获取当前的地理位获取转发详细信息置、速度。当用户离开小程序后，此接口无法调用。</view>
+  <view class="section-detail" wx:if="{{itemId == 5}}">获取该小程序下已保存的本地缓存文件列表</view>
+  <view class="section-detail" wx:if="{{itemId == 6}}">获取本地文件的文件信息。此接口只能用于获取已保存到本地的文件，若需要获取临时文件信息，请使用 wx.getFileInfo() 接口。</view>
   <view class="section-content">
     <!-- section:navigateTo -->
     <view class="section-main main2" wx:if="{{itemId == 1}}">
@@ -14,6 +18,46 @@
       <view>胶囊right：{{bRight}}</view>
       <view>胶囊bottom：{{bBottom}}</view>
       <view>胶囊left：{{bLeft}}</view>
+    </view>
+    <!-- section:storage -->
+    <view class="section-main main2" wx:if="{{itemId == 2}}">
+      <button class="button" type="default" bindtap="getstorage">
+        点我获取storage
+      </button>
+      <text>{{storage}}</text>
+    </view>
+    <!-- section:storage -->
+    <view class="section-main main2" wx:if="{{itemId == 3}}">
+      <button class="button" type="default" bindtap="getlocation">
+        点我获取location
+      </button>
+      <text class="section-item">latitude(纬度):{{location.latitude}}</text>
+      <text class="section-item">longitude(经度):{{location.longitude}}</text>
+      <text class="section-item">speed(速度):{{location.speed}}</text>
+      <text class="section-item">accuracy(位置的精确度):{{location.accuracy}}</text>
+      <text class="section-item">verticalAccuracy(垂直精度):{{location.verticalAccuracy}}</text>
+      <text class="section-item">horizontalAccuracy(水平精度):{{location.horizontalAccuracy}}</text>
+    </view>
+    <!-- section:storage -->
+    <view class="section-main main2" wx:if="{{itemId == 4}}">
+      <text class="section-item">有疑问</text>
+    </view>
+    <!-- section:storage -->
+    <view class="section-main main2" wx:if="{{itemId == 5}}">
+      <text class="section-item">点击之前，先找到savefileAPI保存下来</text>
+      <button class="button" type="default" bindtap="getsavedfilelist">
+        获取该小程序下已保存的本地缓存文件列表
+      </button>
+    </view>
+    <!-- section:storage -->
+    <view class="section-main main2" wx:if="{{itemId == 6}}">
+      <text class="section-item">点击之前，先找到savefileAPI保存下来</text>
+      <text class="section-item">(不知道为啥，感觉没啥用，因为)</text>
+      <button class="button" type="default" bindtap="getsavedfileinfo">
+        点击我获取本地文件的文件信息
+      </button>
+      <view>结果为：</view>
+      <view class="turnline">{{fileinfo}}</view>
     </view>
   </view>
 </view>

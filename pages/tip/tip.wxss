@@ -1,0 +1,51 @@
+/* pages/tip/tip.wxss */
+.wrapper{
+  padding:0 30rpx;
+}
+.tiplist{
+  position: relative;
+  height:140rpx;
+  line-height:140rpx;
+  overflow:hidden;
+  border-bottom:1px solid #faf7f7;
+}
+.tiplist-name{
+  z-index:20;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  color:#515151;
+  font-size:40rpx;
+  background:#fdfdfd;
+}
+.turn-gray{
+  background:#cfcfcf;
+}
+.icon-box{
+  width:50rpx;
+}
+.icon-next{
+  width:33rpx;
+  height:17rpx;
+  transform:rotate(0deg);
+  transition:transform 0.5s;
+}
+.icon-next.active{
+  transform:rotate(180deg); 
+}
+.tiplist-content{
+  z-index:10;
+  width:100%;
+}
+.tiplist-group{
+  width:80%;
+  padding:0 20rpx;
+  color:#999;
+  height:80rpx;
+  line-height:80rpx;
+  font-size:34rpx;
+  border-bottom:1px solid #faf7f7;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

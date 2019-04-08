@@ -12,12 +12,14 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.2",
-	"appid": "wx708455604db7621b",
+	"appid": "wxcd84ec6dc98a47be",
 	"projectname": "%E5%B0%8F%E6%81%92%E6%94%B6%E9%92%B1",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -36,7 +38,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 5,
 			"list": [
 				{
 					"id": 0,
@@ -75,10 +77,10 @@
 				},
 				{
 					"id": 5,
-					"name": "扫码进入-中能达",
-					"pathName": "pages/pay/pay",
-					"query": "q=http%3A%2F%2Ftest-c.pay.pinkecard.com%2Ftest%2Fpay%3Fq%3D520181213dbcdd29ba4714a5cb13562fba4cee943",
-					"scene": "1011"
+					"name": "tip",
+					"pathName": "pages/tip/tip",
+					"query": "",
+					"scene": 1011
 				},
 				{
 					"id": -1,

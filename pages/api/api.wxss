@@ -36,8 +36,8 @@
   display:inline-block;
   width:100%;
   padding:15rpx 0;
-  background:#f5f0f0;
-  color:#FC481A;
+  background:rgba(247, 219, 112,0.5);
+  color:#EE9C6A;
 }
 .list-scroll-left .item-content{
   width:100%;
@@ -85,7 +85,7 @@
   height:34rpx;
 }
 .letter .active{
-  color:#FC481A;
+  color:#EE9C6A;
   font-weight: bold;
   font-size:34rpx;
 }

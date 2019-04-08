@@ -5,28 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cTitle:'',
-    itemId:0,
-    index:'',
-    cDay:'00',
-    cHour:'00',
-    cMinute:'00',
-    cSecond:'00',
-    textInner:'点击暂停倒计时'
+    cTitle: '',
+    itemId: 0,
+    index: '',
+    cDay: '00',
+    cHour: '00',
+    cMinute: '00',
+    cSecond: '00',
+    textInner: '点击暂停倒计时',
+    location: {
+      name: '暂未选择',
+      address: "暂未选择"
+    },
   },
   /**
    * 方法
    */
   //暂停倒计时
-  default(){
-    let _this =  this
+  default() {
+    let _this = this
     isClick = !isClick
-    if (isClick){
+    if (isClick) {
       clearInterval(timer)
       this.setData({
         textInner: '点击开启倒计时'
       })
-    }else{
+    } else {
       setInterval(function () {
         _this.TimeDown("2020/1/1 00:00:00");
       }, 1000)
@@ -39,7 +43,7 @@ Page({
   TimeDown(endDateStr) {
     //结束时间
     let endDate = new Date(endDateStr);
-    
+
     //当前时间
     let nowDate = new Date();
     //相差的总秒数
@@ -50,7 +54,7 @@ Page({
     let modulo = totalSeconds % (60 * 60 * 24);
     //小时数
     let hours = Math.floor(modulo / (60 * 60));
-        modulo = modulo % (60 * 60);
+    modulo = modulo % (60 * 60);
     //分钟
     let minutes = Math.floor(modulo / 60);
     //秒
@@ -61,6 +65,26 @@ Page({
       cHour: hours,
       cMinute: minutes,
       cSecond: seconds
+    })
+  },
+  clearstorage() {
+    wx.clearStorage()
+  },
+  chooseLocation() {
+    let _this = this
+    wx.chooseLocation({
+      success(res) {
+        console.log(res)
+        _this.setData({
+          location: res
+        })
+      },
+      fail(res) {
+        console.log(res)
+        _this.setData({
+          location: res
+        })
+      }
     })
   },
   /**
@@ -84,48 +108,48 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   }
 })

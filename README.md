@@ -19,6 +19,3 @@ I love this part best! This part can tell you what you should do and what not. A
 ## Novice tips   
 I think this weixinProgram is very useful for the new one who want to quickly start wxMini.But when you wang to use this programe ,you have to read
 the wxMini's doc. All of them. It can help you to understand wxMini.
-
-
- 

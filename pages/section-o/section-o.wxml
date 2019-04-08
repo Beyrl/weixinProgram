@@ -2,6 +2,7 @@
   <text class="section-title">{{cTitle}}</text>
   <!-- detail: -->
   <view class="section-detail" wx:if="{{itemId == 1}}">监听窗口尺寸变化事件,如：屏幕旋转事件</view>
+  <view class="section-detail" wx:if="{{itemId == 3}}">监听窗使用微信内置地图查看位置</view>
   <view class="section-content">
     <!-- section:navigateTo -->
     <view class="section-main main2" wx:if="{{itemId == 1}}">
@@ -10,6 +11,10 @@
         <view>新区域宽度：{{newWidth}}</view>
         <view>新区域高度：{{newHeight}}</view>
         <view>旋转屏幕试一下~</view>
+    </view>
+    <!-- section:navigateTo -->
+    <view class="section-main main2" wx:if="{{itemId == 3}}">
+        <button class="buttonInp" bindtap="openlocation">点击openlocation</button>
     </view>
   </view>
 </view>

@@ -1,14 +1,21 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/api/api",
+    "pages/tip/tip",
+    "pages/tip-1/tip-1",
+    "pages/tip-2/tip-2",
+    "pages/tip-2-2/tip-2-2",
+    "pages/tip-3/tip-3",
+    "pages/tip-4/tip-4",
+    "pages/tip-5/tip-5",
+    "pages/tip-6/tip-6",
+    "pages/tip-7/tip-7",
+    "pages/tip-8/tip-8",
+    "pages/tip-9/tip-9",
+    "pages/tip-10/tip-10",
     "pages/index/index",
-    "pages/pay/pay",
     "pages/logs/logs",
-    "pages/result/result",
-    "pages/webview/webview",
-    "pages/item/item",
-    "pages/cart/cart",
     "pages/section-a/section-a",
     "pages/section-b/section-b",
     "pages/section-c/section-c",
@@ -20,33 +27,41 @@
     "pages/section-r/section-r",
     "pages/section-r-1/section-r-1",
     "pages/section-r-2/section-r-2",
-    "pages/section-s/section-s"
+    "pages/section-s/section-s",
+    "pages/section-t/section-t",
+    "pages/section-u/section-u"
   ],
-  "window":{
+  "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ffcbf0",  
+    "navigationBarBackgroundColor": "#B3DDD1",
     "navigationBarTitleText": "小程序文档",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "backgroundColor": "#ffcbf0",
-    "color":"#999",
-    "selectedColor":"#FC481A",
-    "borderStyle":"white",
+    "backgroundColor": "#B3DDD1",
+    "color": "#999",
+    "selectedColor": "#EE9C6A",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/home/home",
         "text": "组件",
-        "iconPath":"assets/image/btn-home.png",
-        "selectedIconPath":"assets/image/btn-home-active.png"
+        "iconPath": "assets/image/btn-home.png",
+        "selectedIconPath": "assets/image/btn-home-active.png"
       },
       {
         "pagePath": "pages/api/api",
         "text": "API",
         "iconPath": "assets/image/btn-api.png",
         "selectedIconPath": "assets/image/btn-api-active.png"
+      },
+      {
+        "pagePath": "pages/tip/tip",
+        "text": "TIP",
+        "iconPath": "assets/image/btn-tip.png",
+        "selectedIconPath": "assets/image/btn-tip-active.png"
       }
     ]
-  }
-  
+  },
+  "sitemapLocation": "sitemap.json"
 }

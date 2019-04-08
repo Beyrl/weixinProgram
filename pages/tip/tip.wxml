@@ -1,0 +1,34 @@
+<!--pages/tip/tip.wxml-->
+<view class="wrapper">
+  <view class="tiplist"
+        wx:for="{{tiplist}}" 
+        wx:for-item="tiplist" 
+        wx:key="{{tiplist.itemId}}" 
+        animation="{{animationList[tiplist.itemId]}}"
+        data-id="{{tiplist.itemId}}"
+        data-slide = "{{slideList[tiplist.itemId]}}"
+        bindtap='showChildList'
+        >
+    <view class="tiplist-name">
+      <text>{{tiplist.title}}</text>
+      <view class="icon-box" 
+            data-id="{{tiplist.itemId}}"
+            data-slide = "{{slideList[tiplist.itemId]}}"
+            catchtap='showChildList'>
+        <image class="icon-next {{num == tiplist.itemId ? 'active':''}}"  src="../../assets/image/arrow-down.png"></image>
+      </view>
+    </view>
+    <view class="tiplist-content" >
+      <view class="tiplist-group"
+            wx:for="{{tiplist.child}}" 
+            wx:for-item="child" 
+            wx:key="{{child.id}}" 
+            data-index = "{{tiplist.itemId}}"
+            data-desc = "{{child.desc}}"
+            id="{{index}}"
+            catchtap='navigateToPage'>
+        {{child.desc}}
+      </view>
+    </view>
+  </view>
+</view>

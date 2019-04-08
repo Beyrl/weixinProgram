@@ -1,6 +1,8 @@
 <view class="section-wrapper">
   <text class="section-title">{{cTitle}}</text>
   <view class="section-detail" wx:if="{{itemId == 1}}">取消由 setInterval 设置的定时器。</view>
+  <view class="section-detail" wx:if="{{itemId == 3}}">清理本地数据缓存</view>
+  <view class="section-detail" wx:if="{{itemId == 4}}">打开地图选择位置。</view>
   <view class="section-content">
     <view class="section-main main1" wx:if="{{itemId == 1}}">
       <text class="column-title">距离2020年还有：</text>
@@ -14,8 +16,18 @@
         {{textInner}}
       </button>
     </view>
-    <view class="section-main main2" wx:if="{{itemId == 2}}">
-      2
+    <view class="section-main main2" wx:if="{{itemId == 3}}">
+      <button class="button" type="default" bindtap="clearstorage">
+        点击我清理本地数据缓存
+      </button>
+    </view>
+    <view class="section-main main2" wx:if="{{itemId == 4}}">
+      <button class="button" type="default" bindtap="chooseLocation">
+        点击我打开地图选择位置。
+      </button>
+      <view>您选择的位置是：</view>
+      <view class="section-item">name:{{location.name}}</view>
+      <view class="section-item">address:{{location.address}}</view>
     </view>
   </view>
 </view>
